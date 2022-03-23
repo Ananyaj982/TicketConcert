@@ -1,0 +1,42 @@
+{% extends 'tickets/base.html'%}
+{% block content %}
+<h1>PAYMENT<h1>
+<br>
+<br>
+<style>
+.vl {
+  border-left: 2px solid black;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 50px;
+}
+
+</style>
+<div style="width=100px;float:left;"  >
+<p>Ticket Type = {{form.level.value}}</p>
+<p>Total no. of tickets = {{form.num.value}}</p>
+
+<p>Total=&nbsp
+{%ifequal form.level.value "Premium"%}
+	{% widthratio form.num.value 1 800 %}
+{%endifequal %}
+{%ifequal form.level.value "Executive"%}
+	
+	{% widthratio form.num.value 1 500 %}
+{%endifequal %}
+{%ifequal form.level.value "Regular"%}
+	
+	{% widthratio form.num.value 1 350 %}
+{%endifequal %}</p>
+
+</div>
+<div class="vl"></div>
+<div style="width=100px;float:right;"  >
+<h4>PAYMENT METHODS</h4>
+<br>
+<center><h5><a style="text-decoration: none;" href="/credit/{{pk}}/">Credit Card/Debit Card</a></h5></center>
+
+</div>
+{%endblock%}

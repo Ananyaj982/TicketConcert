@@ -1,0 +1,15 @@
+{% extends 'tickets/base.html'%}
+{% block content %}
+	<h1><b>Students Registered in {{lev}}</b><h1>
+	{% for level in levels %}
+		{%if level.pay%}
+           <h2> <a class="text-primary" href="{%url 'studentdetails' pk=level.pk%}">{{ level.name }}</a></h2>
+		   
+			
+			{%endif%}
+		 
+	{% endfor%}
+            
+{%endblock%}        
+
+

@@ -1,0 +1,12 @@
+{% extends 'tickets/base.html'%}
+{% block content %}
+                {% for q in uq %}
+                    <div align ="center" class="qqq">
+                      <a class="btn btn-default" href="{% url 'question_remove' pk=q.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+
+                        <br>
+                        <h2><a class="text-primary" href="{%url 'ansquestion' pk=q.pk%}">{{ q.userq }}</a></h2>
+                      <br>
+                    </div>
+                {% endfor %}
+ {% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'tickets/base.html'%}
+{% block content %}
+<div>
+<p>Any Quries</p>
+    <form method=POST>{%csrf_token%}
+	{{form.userq}}
+	<button type="submit">Submit</button>
+    </div>
+
+	{%if uq%}
+	{% for q in uq %}
+              <div >
+                <br>
+                 <h2>{{ q.userq }}</h2><br>&nbsp;&nbsp;{{q.anq}}
+					{%if user.is_superuser%}
+						<a class="btn btn-default" href="{% url 'question_remove' pk=q.pk %}">Delete</a>
+						<a class="btn btn-default" href="{% url 'ansquestion' pk=q.pk %}">Reply</a>
+						{%endif%}
+                      <br>
+                    </div>
+                {% endfor %}
+	{%else%}
+		<p>0 comments</p>
+	{%endif%}
+
+{%endblock%}

@@ -1,0 +1,32 @@
+
+{% extends 'tickets/base.html'%}
+{% block content %}
+<style>
+.a
+{
+	font-size:40px;
+	font-family:'Trebuchet MS';
+}
+</style>
+<h1 style="font-size:50px"><b>DETAILS</b></h1>
+<br>
+<br>
+<table class="a">
+<tr>
+<td>Name :</td>
+<td>{{det.name}}</td>
+</tr>
+<tr>
+<td>Ticket Level :</td>
+<td>{{det.level}}</td>
+</tr>
+<tr>
+<td>Branch :</td>
+<td>{{det.branch}}</td>
+</tr>
+<tr>
+<td>Number of tickets :</td>
+<td>{{det.num}}</td>
+</tr>
+</table>
+{%endblock%}

@@ -1,0 +1,12 @@
+{% extends 'tickets/base.html'%}
+{% block content %}
+
+<div>
+		{% if form.ValidationError %}
+        <p>{{form.ValidationError}}</p>
+		{% endif %}
+		<form method=POST class="post-form">{%csrf_token%}
+			{{form.as_p}}                     
+			<button type="submit" class="save btn btn-default">Pay Now</button>
+		</div>
+{%endblock%} 

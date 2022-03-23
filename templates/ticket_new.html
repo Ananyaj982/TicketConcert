@@ -1,0 +1,33 @@
+{% extends 'tickets/base.html'%}
+{% block content %}
+		<div>
+		<form method=POST class="post-form">{%csrf_token%}
+			<table>
+			<tr>
+			<td>Name :</td>
+			<td>{{form.name}}</td> 
+			</tr>
+			<tr>
+		
+			<td><br><br>Branch : </td>
+			<td><br><br>{{form.branch}}</td>
+			<tr>
+			<td><br><br>Ticket Level :</td>
+			<td><br><br>{{form.level}}</td>
+			</tr>
+			
+			<tr>
+			<td><br><br>Number of tickets :</td>
+			<td><br><br>{{form.num}}&nbsp;&nbsp;(Max of 4 tickets)</td>
+			</tr>
+			</form>
+			<tr>
+			<td><br><br>To complete registration</td>
+			</tr>
+			<tr>
+			<td><br><br>Payment&nbsp;&nbsp;&nbsp;<a ><button type="submit" class="save btn btn-default">Next</button></a></td>
+			</tr>
+			</table>
+			
+		</div>
+{%endblock%}

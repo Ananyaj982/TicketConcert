@@ -1,0 +1,44 @@
+
+
+{% extends 'tickets/base.html'%}
+{% block content %}
+{%if user.is_superuser%}
+		<td style="padding-left:10px"><a href="{% url 'faq' %}" class="btn btn-info" role="button">AddFAQ's</a></td>
+		{%endif%}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <section class="pageheading">
+    <div class="container">
+        <div class="group">
+            
+            <div class="pageheading-heading">
+                <h1 class="word-animation" itemprop="headline" content="Frequently asked questions"><b>Frequently asked questions</b></h1>
+            
+            </div>
+    </div>
+                   <section class="faq">
+        <div class="container">
+		{%if qq%}
+ 	{% for q in qq %}
+              <div >
+                <br>
+                 <h2>{{ q.quest}}</h2><br>&nbsp;&nbsp;{{q.an}}
+				 {%if user.is_superuser%}
+						<a class="btn btn-default" href="{% url 'faq_remove' pk=q.pk %}">Delete</a>
+						
+						{%endif%}
+                    
+					<br>
+                    </div>
+                {% endfor %}
+			
+	{%else%}
+	<br>
+	<br>
+		<p>No FAQ's</p>
+	{%endif%}
+{% endblock %}
+
+
+
+  

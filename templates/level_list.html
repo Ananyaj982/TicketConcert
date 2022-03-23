@@ -1,0 +1,16 @@
+{% extends 'tickets/base.html'%}
+{% block content %}
+<h1>Ticket Levels Registered</h1>
+<br>
+<br>
+<h4>TOTAL NUMBER OF TICKETS={{total}}</h4>
+	{% for level in levels%}
+        <div >
+            
+            
+			<h2><a class="text-primary" href="{%url 'level_detail' level=level.level%}">{{ level.level }}</a></h2>
+			
+        </div>
+
+	{% endfor %}
+{%endblock%}
